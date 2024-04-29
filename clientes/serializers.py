@@ -11,7 +11,7 @@ class ClienteSerializer(serializers.ModelSerializer):
         if not nome_válido(data['nome']):
             raise serializers.ValidationError({'nome':'O nome deve ser válido'})
         if not cpf_valido(data['cpf']):
-            raise serializers.ValidationError({'cpf':'O CPF deve ter 11 dígitos'})        
+            raise serializers.ValidationError({'cpf':'Número de CPF inválido'})        
         if not rg_valido(data['rg']):
             raise serializers.ValidationError({'rg':'O rg deve ter 9 dígitos'})
         if not celular_valido(data['celular']):

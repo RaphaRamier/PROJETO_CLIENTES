@@ -1,11 +1,16 @@
 import re
+from validate_docbr import CPF
+
+
 
 
 def nome_válido(nome):
     return nome.isalpha()
         
 def cpf_valido(numero_cpf):
-    return len(numero_cpf )== 11
+    cpf = CPF()
+    return cpf.validate(numero_cpf)
+    
         
 def rg_valido(numero_rg):
     return len(numero_rg )== 9
